@@ -1,12 +1,15 @@
 import random
 # 猜數字
-# 0~9 猜一數字
+# 1~99 猜一數字
 # 系統會提醒猜大或猜小了
 if __name__ == '__main__':
-    min, max = 1, 9
+    min, max = 1, 99
+    count = 3  # 回數(能玩幾回)
     ans = random.randint(min, max)  # 隨機產生一個答案
     # --------------------------------------------------
-    while True:
+    while count > 0:
+        # 減去 count
+        count = count - 1
         # 使用者猜的程序
         user_guess = int(input('使用者請輸入數字(%d~%d):' % (min, max)))
         if user_guess > ans:
