@@ -7,8 +7,7 @@ def get_bmi(h, w):
 
 
 def print_bmi(h, w):
-    h = h / 100
-    bmi = w / h**2
+    bmi = get_bmi(h, w)
     print(bmi)
 
 
