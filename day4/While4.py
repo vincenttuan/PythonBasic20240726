@@ -2,6 +2,8 @@ import random
 # 猜數字
 # 1~99 猜一數字
 # 系統會提醒猜大或猜小了
+# Homework : 能印出"平手"字樣
+
 if __name__ == '__main__':
     min, max = 1, 99
     count = 3  # 回數(能玩幾回)
