@@ -7,7 +7,7 @@ if __name__ == '__main__':
     # --------------------------------------------------
     while True:
         # 使用者猜的程序
-        user_guess = int(input('使用者請輸入數字(0~9):'))
+        user_guess = int(input('使用者請輸入數字(1~9):'))
         if user_guess > ans:
             print("使用者猜大了")
         elif user_guess < ans:
