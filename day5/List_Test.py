@@ -19,3 +19,14 @@ print(scores)
 scores.__delitem__(2)  # 移除指定位置=2的元素
 print(scores)            # [100, 95, 50, 60]
 # -----------------------------------------
+# 排序
+scores.sort()  # 由小->大排序
+print(scores)            # [50, 60, 95, 100]
+# 反轉
+scores.reverse()
+print(scores)            # [100, 95, 60, 50]
+# 最大值
+print("最大值: %d" % max(scores))  # 100
+# 最小值
+print("最小值: %d" % min(scores))  # 50
+
