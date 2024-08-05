@@ -10,7 +10,8 @@ scores = list(students.values())  # 將所有 value 抓出後放到 list 列表�
 print(scores)  # [90, 85, 100, 45, 72]
 # -----------------------------------------------------------------------
 # 繪製學生成績折線圖
-plt.plot(names, scores)
+#plt.plot(names, scores, 'o-', color='red')
+plt.plot(names, scores, linestyle='-', color='blue', marker='o', markerfacecolor='red', markeredgewidth=0, markersize=10)
 # 設定圖標資訊
 plt.title('Student score chart')
 plt.xlabel('name')
