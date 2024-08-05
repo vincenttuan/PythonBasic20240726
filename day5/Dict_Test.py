@@ -11,7 +11,10 @@ print(scores)  # [90, 85, 100, 45, 72]
 # -----------------------------------------------------------------------
 # 繪製學生成績折線圖
 #plt.plot(names, scores, 'o-', color='red')
-plt.plot(names, scores, linestyle='-', color='blue', marker='o', markerfacecolor='red', markeredgewidth=0, markersize=10)
+#plt.plot(names, scores, linestyle='-', color='blue', marker='o', markerfacecolor='red', markeredgewidth=0, markersize=10)
+# 繪製學生成績長條圖
+colors = ['blue', 'green', 'red', 'purple', 'orange']
+plt.bar(names, scores, color=colors)
 # 設定圖標資訊
 plt.title('Student score chart')
 plt.xlabel('name')
