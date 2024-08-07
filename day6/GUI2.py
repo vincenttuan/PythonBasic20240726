@@ -11,11 +11,11 @@ if __name__ == '__main__':
     win.title('我的小小視窗')
     win.geometry('300x200')
     # 元件配置-----------------------------------------
-    hello_label = tkinter.Label(win, text='Hello !')
+    hello_label = tkinter.Label(win, text='Hello !', font='Arial, 30')
     hello_label.pack()  # 配置到視窗中
-    ok_button = tkinter.Button(win, text="OK")
+    ok_button = tkinter.Button(win, text="OK", font='Arial, 30')
     ok_button.pack(side=tkinter.LEFT)  # 配置到視窗左側
-    exit_button = tkinter.Button(win, text="Exit")
+    exit_button = tkinter.Button(win, text="Exit", font='Arial, 30')
     exit_button.pack(side=tkinter.RIGHT)  # 配置到視窗右側
     # ------------------------------------------------
     win.mainloop()
