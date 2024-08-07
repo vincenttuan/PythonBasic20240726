@@ -21,7 +21,7 @@ def game_over():
     pass
 
 def win_exit():
-    pass
+    win.quit()
 
 if __name__ == '__main__':
     win = tkinter.Tk()
