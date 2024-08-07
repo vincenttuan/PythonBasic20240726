@@ -11,7 +11,13 @@ if __name__ == '__main__':
     win.title('我的小小視窗')
     win.geometry('300x200')
     # 元件配置-----------------------------------------
-    hello_label = tkinter.Label(win, text='Hello !', font='Arial, 30')
+    hello_label = tkinter.Label(win,
+                                text='Hello !',    # 標籤文字
+                                font='Arial, 30',  # 字型大小
+                                bg='green',        # 背景顏色
+                                fg='yellow',       # 前景顏色
+                                width=15,          # 標籤寬度
+                                height=2)          # 標籤高度
     hello_label.pack()  # 配置到視窗中
     ok_button = tkinter.Button(win, text="OK", font='Arial, 30')
     ok_button.pack(side=tkinter.LEFT)  # 配置到視窗左側
