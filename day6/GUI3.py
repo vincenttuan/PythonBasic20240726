@@ -24,10 +24,10 @@ if __name__ == '__main__':
     win.geometry("300x300")
     # 設定變數
     number = tkinter.StringVar()  # 字串參照物件(tkinter專用)
-    number.set(0)
+    number.set('0')
     # label 配置
     label = tkinter.Label(win, textvariable=number, bg='green', fg='yellow',
-                          font='Arial, 30', width=30, height=5)
+                          font='Arial, 60', width=30, height=3)
     label.pack()
     # button 配置
     add_button = tkinter.Button(win, text="Add", font="Arial, 20",
