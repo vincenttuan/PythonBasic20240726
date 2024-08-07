@@ -10,7 +10,12 @@ from tkinter import messagebox
 按下 Exit 會離開視窗
 '''
 def add():
-    pass
+    # 取得目前 number 變數中的內容
+    current_value = int(number.get())
+    # +1 變成新資料
+    new_value = current_value + 1
+    # 將 new_value 傳為字串之後設定到 number 中
+    number.set(str(new_value))
 
 def game_over():
     pass
