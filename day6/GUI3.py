@@ -10,6 +10,10 @@ from tkinter import messagebox
 按下 Exit 會離開視窗
 '''
 def add():
+    global timer  # 取得主程式所宣告的 timer 變數
+    if timer == None:  # 判斷 timer 是否是空的
+        timer = win.after(5000, game_over)  # 計時 5秒鐘, 時間到就會執行 game_over 函式
+
     # 取得目前 number 變數中的內容
     current_value = int(number.get())
     # +1 變成新資料
@@ -18,12 +22,16 @@ def add():
     number.set(str(new_value))
 
 def game_over():
-    pass
+    add_button.config(state=tkinter.DISABLED)  # add 按鈕不可以按
+    messagebox.showinfo('訊息視窗', 'Game Over')
 
 def win_exit():
     win.quit()
 
 if __name__ == '__main__':
+    # 計時器變數
+    timer = None
+
     win = tkinter.Tk()
     win.title("Click 我超強")
     win.geometry("300x300")
