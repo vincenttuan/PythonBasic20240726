@@ -17,21 +17,21 @@ if __name__ == '__main__':
     btn1 = tkinter.Button(text='1', font=myfont, command=lambda: button_click('1'))
     btn2 = tkinter.Button(text='2', font=myfont, command=lambda: button_click('2'))
     btn3 = tkinter.Button(text='3', font=myfont, command=lambda: button_click('3'))
-    btn_add = tkinter.Button(text='+', font=myfont)
+    btn_add = tkinter.Button(text='+', font=myfont, command=lambda: button_click('+'))
     # -------------------------------------------------------------
     btn4 = tkinter.Button(text='4', font=myfont, command=lambda: button_click('4'))
     btn5 = tkinter.Button(text='5', font=myfont, command=lambda: button_click('5'))
     btn6 = tkinter.Button(text='6', font=myfont, command=lambda: button_click('6'))
-    btn_sub = tkinter.Button(text='-', font=myfont)
+    btn_sub = tkinter.Button(text='-', font=myfont, command=lambda: button_click('-'))
     # -------------------------------------------------------------
     btn7 = tkinter.Button(text='7', font=myfont, command=lambda: button_click('7'))
     btn8 = tkinter.Button(text='8', font=myfont, command=lambda: button_click('8'))
     btn9 = tkinter.Button(text='9', font=myfont, command=lambda: button_click('9'))
     btn_calc = tkinter.Button(text='=', font=myfont)
     # -------------------------------------------------------------
-    btn_mul = tkinter.Button(text='*', font=myfont)
+    btn_mul = tkinter.Button(text='*', font=myfont, command=lambda: button_click('*'))
     btn0 = tkinter.Button(text='0', font=myfont, command=lambda: button_click('0'))
-    btn_div = tkinter.Button(text='/', font=myfont)
+    btn_div = tkinter.Button(text='/', font=myfont, command=lambda: button_click('/'))
     # -------------------------------------------------------------
     # 按鈕布局
     # EWNS: 無縫隙元件填滿
