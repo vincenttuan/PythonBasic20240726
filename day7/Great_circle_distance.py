@@ -25,3 +25,13 @@ def get_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
+
+if __name__ == '__main__':
+    # 台北市忠孝東路四段169號
+    lat1, lon1 = 25.04190, 121.55050
+    # 國父紀念館
+    lat2, lon2 = 25.04012, 121.56008
+    # 計算距離
+    distance = get_distance(lat1, lon1, lat2, lon2)
+    print("距離: %.1f m" % distance)
+
