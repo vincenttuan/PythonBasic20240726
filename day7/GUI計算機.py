@@ -7,6 +7,13 @@ def button_click(number):
     input_entry.insert(0, current + number)
 
 
+def calculate():
+    current = input_entry.get()  # 取得目前輸入框上的資料
+    result = eval(current)  # eval 可以進行簡單運算
+    input_entry.delete(0, tkinter.END)  # 清空輸入框上的資料
+    input_entry.insert(0, str(result))  # 注意: result 要轉字串
+    
+
 if __name__ == '__main__':
     win = tkinter.Tk()
     # 設定字型, 大小, 風格
@@ -27,7 +34,7 @@ if __name__ == '__main__':
     btn7 = tkinter.Button(text='7', font=myfont, command=lambda: button_click('7'))
     btn8 = tkinter.Button(text='8', font=myfont, command=lambda: button_click('8'))
     btn9 = tkinter.Button(text='9', font=myfont, command=lambda: button_click('9'))
-    btn_calc = tkinter.Button(text='=', font=myfont)
+    btn_calc = tkinter.Button(text='=', font=myfont, command=calculate)
     # -------------------------------------------------------------
     btn_mul = tkinter.Button(text='*', font=myfont, command=lambda: button_click('*'))
     btn0 = tkinter.Button(text='0', font=myfont, command=lambda: button_click('0'))
