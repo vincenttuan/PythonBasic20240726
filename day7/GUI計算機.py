@@ -1,6 +1,12 @@
 import tkinter
 from tkinter import font
 
+def button_click(number):
+    current = input_entry.get()  # 取得目前輸入框上的資料
+    input_entry.delete(0, tkinter.END)  # 清空輸入框上的資料
+    input_entry.insert(0, current + number)
+
+
 if __name__ == '__main__':
     win = tkinter.Tk()
     # 設定字型, 大小, 風格
@@ -8,23 +14,23 @@ if __name__ == '__main__':
     # 宣告按鈕
     input_entry = tkinter.Entry(font=myfont, justify=tkinter.RIGHT)
     # -------------------------------------------------------------
-    btn1 = tkinter.Button(text='1', font=myfont)
-    btn2 = tkinter.Button(text='2', font=myfont)
-    btn3 = tkinter.Button(text='3', font=myfont)
+    btn1 = tkinter.Button(text='1', font=myfont, command=lambda: button_click('1'))
+    btn2 = tkinter.Button(text='2', font=myfont, command=lambda: button_click('2'))
+    btn3 = tkinter.Button(text='3', font=myfont, command=lambda: button_click('3'))
     btn_add = tkinter.Button(text='+', font=myfont)
     # -------------------------------------------------------------
-    btn4 = tkinter.Button(text='4', font=myfont)
-    btn5 = tkinter.Button(text='5', font=myfont)
-    btn6 = tkinter.Button(text='6', font=myfont)
+    btn4 = tkinter.Button(text='4', font=myfont, command=lambda: button_click('4'))
+    btn5 = tkinter.Button(text='5', font=myfont, command=lambda: button_click('5'))
+    btn6 = tkinter.Button(text='6', font=myfont, command=lambda: button_click('6'))
     btn_sub = tkinter.Button(text='-', font=myfont)
     # -------------------------------------------------------------
-    btn7 = tkinter.Button(text='7', font=myfont)
-    btn8 = tkinter.Button(text='8', font=myfont)
-    btn9 = tkinter.Button(text='9', font=myfont)
+    btn7 = tkinter.Button(text='7', font=myfont, command=lambda: button_click('7'))
+    btn8 = tkinter.Button(text='8', font=myfont, command=lambda: button_click('8'))
+    btn9 = tkinter.Button(text='9', font=myfont, command=lambda: button_click('9'))
     btn_calc = tkinter.Button(text='=', font=myfont)
     # -------------------------------------------------------------
     btn_mul = tkinter.Button(text='*', font=myfont)
-    btn0 = tkinter.Button(text='0', font=myfont)
+    btn0 = tkinter.Button(text='0', font=myfont, command=lambda: button_click('0'))
     btn_div = tkinter.Button(text='/', font=myfont)
     # -------------------------------------------------------------
     # 按鈕布局
