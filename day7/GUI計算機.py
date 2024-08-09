@@ -12,7 +12,10 @@ def calculate():
     result = eval(current)  # eval 可以進行簡單運算
     input_entry.delete(0, tkinter.END)  # 清空輸入框上的資料
     input_entry.insert(0, str(result))  # 注意: result 要轉字串
-    
+
+
+def clear():
+    input_entry.delete(0, tkinter.END)  # 清空輸入框上的資料
 
 if __name__ == '__main__':
     win = tkinter.Tk()
@@ -34,11 +37,12 @@ if __name__ == '__main__':
     btn7 = tkinter.Button(text='7', font=myfont, command=lambda: button_click('7'))
     btn8 = tkinter.Button(text='8', font=myfont, command=lambda: button_click('8'))
     btn9 = tkinter.Button(text='9', font=myfont, command=lambda: button_click('9'))
-    btn_calc = tkinter.Button(text='=', font=myfont, command=calculate)
+    btn_clear = tkinter.Button(text='C', font=myfont, command=clear)
     # -------------------------------------------------------------
     btn_mul = tkinter.Button(text='*', font=myfont, command=lambda: button_click('*'))
     btn0 = tkinter.Button(text='0', font=myfont, command=lambda: button_click('0'))
     btn_div = tkinter.Button(text='/', font=myfont, command=lambda: button_click('/'))
+    btn_calc = tkinter.Button(text='=', font=myfont, command=calculate)
     # -------------------------------------------------------------
     # 按鈕布局
     # EWNS: 無縫隙元件填滿
@@ -57,11 +61,12 @@ if __name__ == '__main__':
     btn7.grid(row=3, column=0, sticky='EWNS')
     btn8.grid(row=3, column=1, sticky='EWNS')
     btn9.grid(row=3, column=2, sticky='EWNS')
-    btn_calc.grid(row=3, column=3, rowspan=2, sticky='EWNS')
+    btn_clear.grid(row=3, column=3, sticky='EWNS')
     # -------------------------------------------------------------
     btn_mul.grid(row=4, column=0, sticky='EWNS')
     btn0.grid(row=4, column=1, sticky='EWNS')
     btn_div.grid(row=4, column=2, sticky='EWNS')
+    btn_calc.grid(row=4, column=3, sticky='EWNS')
     # -------------------------------------------------------------
     win.mainloop()
 
