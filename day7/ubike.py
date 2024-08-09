@@ -15,8 +15,9 @@ lat1, lon1 = 25.04190, 121.55050
 for ubike in ubike_list:
     lat2, lon2 = ubike['latitude'], ubike['longitude']
     distance = get_distance(lat1, lon1, lat2, lon2)
-    print("距離: %d 站名: %s 地址: %s 全部: %d 可借: %d 可還: %d" % (
-        distance, ubike['sna'], ubike['ar'], ubike['total'],
-        ubike['available_rent_bikes'], ubike['available_return_bikes']
-    ))
+    if distance <= 200:
+        print("距離: %d 站名: %s 地址: %s 全部: %d 可借: %d 可還: %d" % (
+            distance, ubike['sna'], ubike['ar'], ubike['total'],
+            ubike['available_rent_bikes'], ubike['available_return_bikes']
+        ))
 
