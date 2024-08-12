@@ -6,6 +6,7 @@ try:
     result = 10 / y
 except:
     print('y 有錯誤')
+else:
+    print(result)  # 當 result 沒有錯誤才會執行
 
-print(y)
 
