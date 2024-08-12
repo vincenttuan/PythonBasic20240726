@@ -16,3 +16,8 @@ if __name__ == '__main__':
         user_input()
     except ValueError as e:
         print('請輸入整數數字')
+    # -----------------------
+    try:
+        user_input()
+    except ValueError as e:
+        print('請輸入整數數字')
