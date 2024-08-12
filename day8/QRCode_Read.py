@@ -3,7 +3,19 @@ from PIL import Image  # 用於打開與處理圖像檔案
 from pyzbar.pyzbar import decode  # 用於 QRCode 解碼
 
 def read_qrcode(filename):
-    pass
+    # 打開 QR 碼圖像
+    img = Image.open(filename)
+    # 嘗試解碼 QRCode
+    try:
+        decoded_objects = decode(img)
+        if decoded_objects:  #  有偵測到 QRCode
+            # 取得 QRCode 解碼內容
+            decoded_text = decoded_objects[0].data.decode('utf-8')
+            print('解碼後的內容:', decoded_text)
+        else: #  沒有偵測到 QRCode
+            print('檔案內有不含 QRCode')
+    except Exception as e:
+        print('解碼失敗', e)
 
 
 if __name__ == '__main__':
