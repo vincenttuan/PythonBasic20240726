@@ -12,4 +12,7 @@ def user_input():
 
 
 if __name__ == '__main__':
-    user_input()
+    try:
+        user_input()
+    except ValueError as e:
+        print('請輸入整數數字')
