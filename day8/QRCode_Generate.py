@@ -3,6 +3,7 @@
 import qrcode
 import base64
 
+# 將明碼的資料編碼成 base64
 def encode_to_base64(data):
     return base64.b64encode(data.encode('utf-8')).decode('utf-8')
 
