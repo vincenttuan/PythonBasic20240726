@@ -13,12 +13,13 @@ def read_qrcode(filename):
             # 取得 QRCode 解碼內容
             decoded_text = decoded_objects[0].data.decode('utf-8')
             print('解碼後的內容:', decoded_text)
+            # ---------------------------------------------------------------------
             # 是否要用 base64 在進行解碼 ?
             choice = input('是否要用 base64 在進行解碼(y/n):')
             if choice == 'y':
                 decoded_base64_text = base64.b64decode(decoded_text).decode('utf-8')
                 print('Base64 解碼後的內容:', decoded_base64_text)
-
+            # ---------------------------------------------------------------------
         else: #  沒有偵測到 QRCode
             print('檔案內有不含 QRCode')
     except Exception as e:
