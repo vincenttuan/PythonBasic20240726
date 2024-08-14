@@ -25,6 +25,18 @@ faces = face_cascade.detectMultiScale(
 for (x, y, w, h) in faces:
     cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
 
+    # 偵測眼睛 (要在 for 裡面)
+    # 建立 roi 人臉區域 (因為要在人臉內部偵測眼睛)
+    roi_color = frame[y:y+h, x:x+w]  # 人臉的有效區域-彩色版
+    roi_gray = gray[y:y+h, x:x+w]  # 人臉的有效區域-灰階版
+    # 進行人臉內的眼睛偵測
+    eyes = eye_cascade.detectMultiScale(
+        roi_gray, scaleFactor=1.1, minNeighbors=15, minSize=(10, 10), flags=cv2.CASCADE_SCALE_IMAGE
+    )
+    # 進行眼睛矩形繪製
+    for (ex, ey, ew, eh) in eyes:
+        cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+
 # -------------------------------------------------------------------------
 
 # 顯示圖片
