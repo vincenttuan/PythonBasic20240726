@@ -20,6 +20,10 @@ faces = face_cascade.detectMultiScale(
 )
 print("臉部座標 (x, y, w, h):", faces)
 
+# 在 face 上畫出矩形
+for (x, y, w, h) in faces:
+    # (x, y) 左上角, (x+w, y+h) 右下角, (0, 0, 255) BGR 顏色, 5: 框線寬度
+    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 5)
 
 
 # -----------------------------------------------------
