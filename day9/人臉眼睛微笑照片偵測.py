@@ -10,7 +10,7 @@ eye_cascade = cv2.CascadeClassifier('ai/xml/haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('ai/xml/haarcascade_smile.xml')
 
 # 讀取影像
-frame = cv2.imread('ai/image/girl.jpg')
+frame = cv2.imread('ai/image/boy.jpg')
 
 # 將彩色影像轉灰階, 可以增加辨識效率
 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -31,7 +31,7 @@ for (x, y, w, h) in faces:
     roi_gray = gray[y:y+h, x:x+w]  # 人臉的有效區域-灰階版
     # 進行人臉內的眼睛偵測
     eyes = eye_cascade.detectMultiScale(
-        roi_gray, scaleFactor=1.1, minNeighbors=15, minSize=(10, 10), flags=cv2.CASCADE_SCALE_IMAGE
+        roi_gray, scaleFactor=1.1, minNeighbors=50, minSize=(10, 10), flags=cv2.CASCADE_SCALE_IMAGE
     )
     # 進行眼睛矩形繪製
     for (ex, ey, ew, eh) in eyes:
@@ -39,7 +39,7 @@ for (x, y, w, h) in faces:
     # ---------------------------------------------------------------------
     # 進行微笑偵測
     smile = smile_cascade.detectMultiScale(
-        roi_gray, scaleFactor=1.1, minNeighbors=15, minSize=(10, 10), flags=cv2.CASCADE_SCALE_IMAGE
+        roi_gray, scaleFactor=1.1, minNeighbors=250, minSize=(30, 30), flags=cv2.CASCADE_SCALE_IMAGE
     )
     # 進行微笑矩形繪製
     for (sx, sy, sw, sh) in smile:
