@@ -36,6 +36,14 @@ for (x, y, w, h) in faces:
     # 進行眼睛矩形繪製
     for (ex, ey, ew, eh) in eyes:
         cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+    # ---------------------------------------------------------------------
+    # 進行微笑偵測
+    smile = smile_cascade.detectMultiScale(
+        roi_gray, scaleFactor=1.1, minNeighbors=15, minSize=(10, 10), flags=cv2.CASCADE_SCALE_IMAGE
+    )
+    # 進行微笑矩形繪製
+    for (sx, sy, sw, sh) in smile:
+        cv2.rectangle(roi_color, (sx, sy), (sx+sw, sy+sh), (255, 0, 0), 2)
 
 # -------------------------------------------------------------------------
 
