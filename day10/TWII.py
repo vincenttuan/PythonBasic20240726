@@ -21,6 +21,12 @@ def twii(year, month, day):
     csv = csv.replace('"', '')  # 移除雙引號
     csv = csv.replace('-', '-1')  # 將 - 轉換成 -1
     print(csv)
+    # ----------------------------
+    # 資料分析
+    yield_rate = 7  # 殖利率
+    pe = 10  # 本益比
+    pb = 1   # 股價淨值比
+    print('證券代號,證券名稱,殖利率(%),股利年度,本益比,股價淨值比,財報年/季')
 
 
 if __name__ == '__main__':
