@@ -45,7 +45,8 @@ def twii(year, month, day, yield_rate, pe, pb):
 def search():
     # 取得用戶的輸入資訊
     year = int(year_entry.get())
-    month = int(month_entry.get())
+    #month = int(month_entry.get())
+    month = int(month_combobox.get())
     day = int(day_entry.get())
     yield_rate = float(yield_rate_entry.get())
     pe = float(pe_entry.get())
@@ -84,8 +85,11 @@ if __name__ == '__main__':
 
     # 建立月份
     ttk.Label(main_frame, text="月份").grid(row=0, column=2, padx=5, pady=5)
-    month_entry = ttk.Entry(main_frame, width=10)
-    month_entry.grid(row=0, column=3, padx=5, pady=5)
+    #month_entry = ttk.Entry(main_frame, width=10)
+    #month_entry.grid(row=0, column=3, padx=5, pady=5)
+    month_combobox = ttk.Combobox(main_frame, width=7, values=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    month_combobox.set("8")  # 設定預設值
+    month_combobox.grid(row=0, column=3, padx=5, pady=5)
 
     # 建立日期
     ttk.Label(main_frame, text="日期").grid(row=0, column=4, padx=5, pady=5)
