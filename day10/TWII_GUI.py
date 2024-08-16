@@ -3,6 +3,46 @@ from tkinter import ttk, scrolledtext  # ttk 具有現代外觀
 import requests
 import datetime
 
+
+def twii(year, month, day, yield_rate, pe, pb):
+    """
+    查詢台灣證券交易所的數據
+    :param year: 年份
+    :param month: 月份
+    :param day: 日期
+    :param yield_rate: 殖利率
+    :param pe: 本益比
+    :param pb: 股價淨值比
+    :return: 符合條件的股票列表
+    """
+    # 構建 URL，%s 是一個佔位符，稍後會被替換為實際的日期
+    url = 'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&date=%s&selectType=ALL'
+    # 將年月日轉換為 datetime 對象
+    date = datetime.datetime(year, month, day)
+    # 將 datetime 對象格式化為 YYYYMMDD 的字符串
+    date_str = date.strftime('%Y%m%d')
+    # 將日期字符串插入到 URL 中
+    url = url % date_str
+
+    # 發送 GET 請求獲取 CSV 數據
+    csv = requests.get(url).text
+    # 清理數據：移除雙引號，將 '-' 替換為 '-1'
+    csv = csv.replace('"', '').replace('-', '-1')
+
+    results = []
+    # 按行分割 CSV 數據
+    for row in csv.split('\r\n'):
+        # 將每行分割為列表
+        list = row.split(',')
+        # 檢查是否為有效的數據行（8個元素且不是標題行）
+        if len(list) == 8 and list[0] != '證券代號':
+            # 檢查是否符合條件
+            if float(list[2]) > yield_rate and float(list[4]) < pe and float(list[5]) < pb:
+                # 將符合條件的行添加到結果列表
+                results.append(','.join(list))
+
+    return results
+
 def search():
     pass
 
