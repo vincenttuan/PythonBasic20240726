@@ -10,4 +10,11 @@ date_str = date.strftime('%Y%m%d')  # 將日期格式轉字串
 print(date_str)
 url = url % date_str
 print(url)
+# ----------------------------
+# 取得 csv 資料
+csv = requests.get(url).text
+print(csv)
+
+
+
 
