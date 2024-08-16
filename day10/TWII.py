@@ -30,7 +30,10 @@ def twii(year, month, day):
     for row in csv.split('\r\n'):  # 逐行切割
         list = row.split(',')
         if len(list) == 8 and list[0] != '證券代號':
-            print(list)
+            # print(list)
+            if float(list[2]) > yield_rate and float(list[4]) < pe and float(list[5]) < pb:
+                print(list)
+
 
 
 if __name__ == '__main__':
