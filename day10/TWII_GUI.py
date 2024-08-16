@@ -12,6 +12,7 @@ if __name__ == '__main__':
     main_frame = ttk.Frame(root, padding="10")
     main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
+    # 第一列 -----------------------------------------------------------------
     # 建立年份
     ttk.Label(main_frame, text="年份").grid(row=0, column=0, padx=5, pady=5)
     year_entry = ttk.Entry(main_frame, width=10)
@@ -27,7 +28,12 @@ if __name__ == '__main__':
     day_entry = ttk.Entry(main_frame, width=10)
     day_entry.grid(row=0, column=5, padx=5, pady=5)
 
-    # ------------------------------------------------------------------------
+    # 第二列 -----------------------------------------------------------------
+    # 殖利率
+    ttk.Label(main_frame, text="殖利率").grid(row=1, column=0, padx=5, pady=5)
+    yield_rate_entry = ttk.Entry(main_frame, width=10)
+    yield_rate_entry.grid(row=1, column=1, padx=5, pady=5)
+
 
     # 啟動 GUI 循環
     root.mainloop()
