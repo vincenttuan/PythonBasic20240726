@@ -15,7 +15,13 @@ def twii(year, month, day):
     # ----------------------------
     # 取得 csv 資料
     csv = requests.get(url).text
+    # print(csv)
+    # ----------------------------
+    # 過濾雜訊
+    csv = csv.replace('"', '')  # 移除雙引號
+    csv = csv.replace('-', '-1')  # 將 - 轉換成 -1
     print(csv)
+
 
 if __name__ == '__main__':
     twii(2024, 8, 15)
