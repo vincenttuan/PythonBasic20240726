@@ -5,7 +5,8 @@
 import requests
 import datetime
 
-def twii(year, month, day):
+# year, month, day, yield_rate 殖利率, pe 本益比, pb 股價淨值比
+def twii(year, month, day, yield_rate, pe, pb):
     url = 'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&date=%s&selectType=ALL'
     date = datetime.datetime(year, month, day)  # 日期格式
     date_str = date.strftime('%Y%m%d')  # 將日期格式轉字串
@@ -23,9 +24,6 @@ def twii(year, month, day):
     # print(csv)
     # ----------------------------
     # 資料分析
-    yield_rate = 7  # 殖利率
-    pe = 10  # 本益比
-    pb = 1   # 股價淨值比
     print('證券代號,證券名稱,殖利率(%),股利年度,本益比,股價淨值比,財報年/季')
     for row in csv.split('\r\n'):  # 逐行切割
         list = row.split(',')
@@ -37,7 +35,7 @@ def twii(year, month, day):
 
 
 if __name__ == '__main__':
-    twii(2024, 8, 15)
+    twii(2024, 8, 15, 7, 10, 1)
 
 
 
