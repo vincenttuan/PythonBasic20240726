@@ -3,6 +3,9 @@ from tkinter import ttk, scrolledtext  # ttk 具有現代外觀
 import requests
 import datetime
 
+def search():
+    pass
+
 if __name__ == '__main__':
     # 建立主視窗
     root = tk.Tk()
@@ -43,6 +46,14 @@ if __name__ == '__main__':
     ttk.Label(main_frame, text="股價淨值比").grid(row=1, column=4, padx=5, pady=5)
     pb_entry = ttk.Entry(main_frame, width=10)
     pb_entry.grid(row=1, column=5, padx=5, pady=5)
+
+    # 查詢按鈕
+    search_button = ttk.Button(main_frame, text='查詢', command=search)
+    search_button.grid(row=2, column=0, columnspan=6, pady=10)
+
+    # 放置結果資料區
+    result_text = scrolledtext.ScrolledText(main_frame, width=80, height=20)
+    result_text.grid(row=3, column=0, columnspan=6, padx=5, pady=5)
 
     # 啟動 GUI 循環
     root.mainloop()
