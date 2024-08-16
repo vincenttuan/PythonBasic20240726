@@ -55,7 +55,7 @@ def search():
     results = twii(year, month, day, yield_rate, pe, pb)
 
     # 先清空結果視窗
-    result_text.delete(0, tk.END)
+    result_text.delete(1.0, tk.END)
 
     # 插入標題列
     result_text.insert(tk.END, "證券代號,證券名稱,殖利率(%),股利年度,本益比,股價淨值比,財報年/季\n")
