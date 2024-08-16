@@ -34,6 +34,15 @@ if __name__ == '__main__':
     yield_rate_entry = ttk.Entry(main_frame, width=10)
     yield_rate_entry.grid(row=1, column=1, padx=5, pady=5)
 
+    # 本益比
+    ttk.Label(main_frame, text="本益比").grid(row=1, column=2, padx=5, pady=5)
+    pe_entry = ttk.Entry(main_frame, width=10)
+    pe_entry.grid(row=1, column=3, padx=5, pady=5)
+
+    # 股價淨值比
+    ttk.Label(main_frame, text="股價淨值比").grid(row=1, column=4, padx=5, pady=5)
+    pb_entry = ttk.Entry(main_frame, width=10)
+    pb_entry.grid(row=1, column=5, padx=5, pady=5)
 
     # 啟動 GUI 循環
     root.mainloop()
