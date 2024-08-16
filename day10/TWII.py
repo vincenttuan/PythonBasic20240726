@@ -4,16 +4,22 @@
 
 import requests
 import datetime
-url = 'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&date=%s&selectType=ALL'
-date = datetime.datetime(2024, 8, 15)  # 日期格式
-date_str = date.strftime('%Y%m%d')  # 將日期格式轉字串
-print(date_str)
-url = url % date_str
-print(url)
-# ----------------------------
-# 取得 csv 資料
-csv = requests.get(url).text
-print(csv)
+
+def twii(year, month, day):
+    url = 'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&date=%s&selectType=ALL'
+    date = datetime.datetime(year, month, day)  # 日期格式
+    date_str = date.strftime('%Y%m%d')  # 將日期格式轉字串
+    print(date_str)
+    url = url % date_str
+    print(url)
+    # ----------------------------
+    # 取得 csv 資料
+    csv = requests.get(url).text
+    print(csv)
+
+if __name__ == '__main__':
+    twii(2024, 8, 15)
+
 
 
 
